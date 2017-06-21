@@ -5,7 +5,7 @@ class Api::V1::AuthController < ApplicationController
     user = User.find_by(username: params[:username])
     if user.present? && user.authenticate(params[:password])
       render json: {
-        id: user.id,
+        # id: user.id,
         username: user.username,
         jwt: JWT.encode(
           {user_id: user.id},
